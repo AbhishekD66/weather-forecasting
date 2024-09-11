@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website - Landing Page</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: #e0f7fa;
+            color: #333;
+            transition: background 1s ease-in-out;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?weather,sky') center/cover no-repeat;
+            opacity: 0.4;
+            animation: slideBg 20s linear infinite;
+        }
+
+        @keyframes slideBg {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 0;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .cta-button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            background: #ff9800;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            animation: bounceIn 2s ease;
+        }
+
+        .cta-button:hover {
+            background: #f57c00;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Live Weather Forecast</h1>
+        <p>Stay updated with the latest weather conditions anywhere, anytime.</p>
+        <!-- This button will navigate to the main weather page -->
+        <a href="weather.html" class="cta-button">Check Weather</a>
+    </header>
+</body>
+</html>
